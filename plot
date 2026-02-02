@@ -1,0 +1,21 @@
+plt.figure(figsize=(12,5))
+
+plt.subplot(1,2,1)
+plt.plot(history.history['accuracy'], label='Train Accuracy', marker='o')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy', marker='o')
+plt.title('Model Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.grid(True)
+
+plt.subplot(1,2,2)
+plt.plot(history.history['loss'], label='Train Loss', marker='o')
+plt.plot(history.history['val_loss'], label='Validation Loss', marker='o')
+plt.title('Model Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.grid(True)
+
+plt.show()
