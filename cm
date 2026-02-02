@@ -1,0 +1,13 @@
+y_true = val_generator.classes  
+class_labels = list(val_generator.class_indices.keys())  
+
+y_pred_probs = model.predict(val_generator, verbose=1)
+y_pred = np.argmax(y_pred_probs, axis=1)  
+
+cm = confusion_matrix(y_true, y_pred)
+
+plt.figure(figsize=(8,6))
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_labels)
+disp.plot(cmap=plt.cm.Blues, xticks_rotation=45)
+plt.title("Confusion Matrix")
+plt.show()
