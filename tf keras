@@ -1,0 +1,7 @@
+lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
+    monitor='val_loss', factor=0.5, patience=3, min_lr=1e-6, verbose=1
+)
+
+early_stop = tf.keras.callbacks.EarlyStopping(
+    monitor='val_loss', patience=5, restore_best_weights=True
+)
